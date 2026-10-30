@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg18
+    container_name: pgvector_pg18_test
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret0001
+      POSTGRES_DB: vector_db
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
